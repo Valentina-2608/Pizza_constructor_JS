@@ -45,3 +45,28 @@ header{
  .basket span{
     margin-left:20px;
 }
+
+
+/* Caption */
+
+.caption{
+    width:100%;
+    height:200px;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    position:absolute;
+    top:140px;
+    left:0px;
+}
+         
+.caption span{
+    font-size:44px;
+    color:#82213E;
+ }
+
+.line{
+    width:300px;
+    height:1px;
+    background-color:darkblue;
+ }
