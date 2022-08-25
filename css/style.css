@@ -94,3 +94,65 @@ header{
     opacity:0.8;
     z-index:3;
 }
+
+
+/* Food_tabs */
+.food_tabs{
+    position:absolute;
+    top:360px;
+    left:0px;
+    width:100%;
+    z-index:5;
+}
+
+.food_tabs input[type="radio"]{
+    display:none;
+    padding: 12px;
+    border: 1px solid #C0C0C0;
+    background: #FFFFFF;
+}
+
+.food_tabs #tab_1, #tab_2, #tab_3, #tab_4, #tab_5, #tab_6{
+    width:100%;
+    display:none;
+    position: absolute;
+    top:99px;
+    left:0px;
+    z-index:4;
+    height:900px;
+    color:white;
+}
+
+.food_tabs > label{
+    display: inline-flex;
+    align-items: center;
+    justify-content:space-around;
+    margin: -1px -5px -1px 0;
+    color:white;
+    border:none;
+    background:#A54964;
+    cursor: pointer;
+    height:100px;
+    width:16.75%;
+    font-size:22px;
+    font-weight:bold;
+}
+
+
+label img{
+    width:20%;
+}
+.food_tabs > input:checked + label {
+    color: #000000;
+    border-bottom: 1px solid #FFFFFF;
+    background: #FFFFFF;
+}
+
+
+#tab_1:checked ~ #tab_1,
+#tab_2:checked ~ #tab_2,
+#tab_3:checked ~ #tab_3,
+#tab_4:checked ~ #tab_4,
+#tab_5:checked ~ #tab_5,
+#tab_6:checked ~ #tab_6
+{ display: block;}
