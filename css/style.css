@@ -210,7 +210,7 @@ label img{
 
 
 
-#add_ingredient{
+.add_ingredient{
     width:50%;
     display: block;
     margin-left: auto;
