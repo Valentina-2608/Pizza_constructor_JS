@@ -244,3 +244,69 @@ label img{
     top:10%;
     left:22%;
 }
+
+/* Order */
+.order{
+    width:70%;
+    background-color: #A54964;
+    position: absolute;
+    top:65%;
+    left:15%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.order_caption{
+    width:100%;
+    height:10%;
+    text-align: center;
+    background-color: gray;
+    color:black;
+    font-size:20px;
+    font-weight: bold;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.order_sum{
+    width:100%;
+}
+
+
+.line{
+    width:90%;
+    height:1px;
+    background-color: black;
+    margin-left:5%;
+}
+
+.sum{
+    width:100%;
+    height:10%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.pizza_weight{
+    width:50%;
+}
+
+.pizza_sum{
+    width:50%;
+}
+
+.order_ingredients{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    margin-top:3%;
+    margin-bottom: 3%;
+}
