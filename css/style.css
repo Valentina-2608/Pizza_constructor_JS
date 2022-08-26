@@ -224,3 +224,22 @@ label img{
     color:#82213E;
     font-weight: bold;
 }
+
+
+/* Base */
+.base{
+    position: absolute;
+    top:-17px;
+    right:0px;
+    width:50%;
+    height:900px;
+    float:left;
+    z-index:5;
+}
+
+
+.base img{
+    width:60%;
+    position: absolute;
+    top:10%;
+}
