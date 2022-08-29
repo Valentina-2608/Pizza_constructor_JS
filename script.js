@@ -3,7 +3,9 @@
 
 let btns_add_ingredients = document.querySelectorAll('.add_ingredient');
 for(let i = 0; i < btns_add_ingredients.length; i++){
+    btns_add_ingredients[i].addEventListener('click', addNewButton);
     btns_add_ingredients[i].addEventListener('click',addToOrder);
+    
 }
 
 function addToOrder(event){
@@ -20,4 +22,15 @@ function addToOrder(event){
     <span class="price">${price}</span>
     <button class="btn_remove">Remove</button>`
     order.appendChild(new_ingredient);
+}
+
+
+let ingredient = document.querySelector('.ingredient');
+
+function addNewButton(){
+    let btn_delete = document.createElement('input');
+    btn_delete.type = 'button';
+    btn_delete.value = 'Remove';
+    btn_delete.classList.add('btn_delete');
+    ingredient.appendChild(btn_delete);
 }
