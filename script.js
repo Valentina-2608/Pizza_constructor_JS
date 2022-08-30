@@ -31,15 +31,30 @@ function addToOrder(event){
 
 let ingredient = document.querySelector('.ingredient');
 
+
 function addNewButton(event){
     let add_ingredient = event.target;
     let add_ingredient_parent = add_ingredient.parentElement;
-    let btn_delete = document.createElement('input');
-    btn_delete.type = 'button';
-    btn_delete.value = 'Remove';
-    btn_delete.classList.add('btn_delete');
-    add_ingredient_parent.appendChild(btn_delete);
-    event. target.removeEventListener('click', addNewButton);
+    let btn_delete = add_ingredient_parent.children[5];
+    btn_delete.style.display = 'block';
+
+
+    /* Delete btn_delete from block ingredient */
+
+    let btns_delete = document.querySelectorAll('.btn_delete');
+    for(let i = 0; i < btns_delete.length; i++){
+        btns_delete[i].addEventListener('click', deleteFromBlockIngredient);
+    }
+
+
+    function deleteFromBlockIngredient(event){
+    let btn_delete = event.target;
+    btn_delete.style.display = 'none';
+    let btn_delete_parent = btn_delete.parentElement;
+    let block_amount = btn_delete_parent.children[0];
+    block_amount.innerHTML = 0;
+    block_amount.style.display = 'none';
+    }
 }
 
 
@@ -53,3 +68,5 @@ function addAmount(event){
     block_amount.innerHTML++;
 
 }
+
+
