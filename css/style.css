@@ -369,7 +369,7 @@ label img{
 
 .btn_delete{
     width:50%;
-    display: block;
+    display: none;
     margin-top:10px;
     margin-left: auto;
     margin-right: auto;
