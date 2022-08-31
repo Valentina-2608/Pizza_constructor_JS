@@ -13,15 +13,15 @@ for(let i = 0; i < btns_add_ingredients.length; i++){
 function addToOrder(event){
     let add_ingredient = event.target;
     let add_ingredient_parent = add_ingredient.parentElement;
-    let name = add_ingredient_parent.children[2].innerHTML;
-    let price = add_ingredient_parent.children[3].children[2].innerHTML;
-    let quantity = add_ingredient_parent.children[0].innerHTML;
+    let name_order = add_ingredient_parent.children[2].innerHTML;
+    let price_order = add_ingredient_parent.children[3].children[2].innerHTML;
+    let quantity_order = 1;
     let order = document.getElementById('order');
     let new_ingredient = document.createElement('div');
     new_ingredient.classList.add('new_ingredient');
-    new_ingredient.innerHTML = `<span class="name">${name}</span>
-    <span class="quantity">${quantity}</span>
-    <span class="price">${price}</span>
+    new_ingredient.innerHTML = `<span class="name">${name_order}</span>
+    <span class="quantity">${quantity_order}</span>
+    <span class="price">${price_order}</span>
     <button class="btn_remove">Remove</button>`
     order.appendChild(new_ingredient);
 
@@ -57,6 +57,7 @@ function addNewButton(event){
     let btns_delete = document.querySelectorAll('.btn_delete');
     for(let i = 0; i < btns_delete.length; i++){
         btns_delete[i].addEventListener('click', deleteFromBlockIngredient);
+        btns_delete[i].addEventListener('click', deleteFromBlockOrder);
     }
 
 
@@ -70,6 +71,19 @@ function addNewButton(event){
     }
 
     
+    /* Delete new_ingredient from order using button in block ingredient */
+
+    function deleteFromBlockOrder(event){
+        let btn_delete = event.target;
+        let btn_delete_parent = btn_delete.parentElement;
+        let name = btn_delete_parent.children[2].innerHTML;
+        let new_ingredients = document.querySelectorAll('.new_ingredient');
+        for(let i = 0; i< new_ingredients.length; i++){
+        if (new_ingredients[i].children[0].innerHTML === name){
+            new_ingredients[i].parentElement.removeChild(new_ingredients[i]);
+        }
+    }
+}
 
 }
 
