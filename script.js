@@ -15,7 +15,7 @@ function addToOrder(event){
     let add_ingredient_parent = add_ingredient.parentElement;
     let name = add_ingredient_parent.children[2].innerHTML;
     let price = add_ingredient_parent.children[3].children[2].innerHTML;
-    let quantity = 1;
+    let quantity = add_ingredient_parent.children[0].innerHTML;
     let order = document.getElementById('order');
     let new_ingredient = document.createElement('div');
     new_ingredient.classList.add('new_ingredient');
