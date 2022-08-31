@@ -26,6 +26,7 @@ function addToOrder(event){
     order.appendChild(new_ingredient);
 
 
+    /* Remove block new_ingredient from block order */
    let btns_remove = document.querySelectorAll('.btn_remove');
    for(let i = 0; i < btns_remove.length; i++){
         btns_remove[i].addEventListener('click', removeIgredient);
@@ -73,3 +74,13 @@ function addNewButton(event){
 }
 
 
+/* Add count of ingredients */
+
+function addAmount(event){
+    let add_ingredient = event.target;
+    let add_ingredient_parent = add_ingredient.parentElement;
+    let block_amount = add_ingredient_parent.children[0];
+    block_amount.style.display = 'block';
+    block_amount.innerHTML++;
+
+}
