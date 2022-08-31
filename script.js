@@ -24,6 +24,18 @@ function addToOrder(event){
     <span class="price">${price}</span>
     <button class="btn_remove">Remove</button>`
     order.appendChild(new_ingredient);
+
+
+   let btns_remove = document.querySelectorAll('.btn_remove');
+   for(let i = 0; i < btns_remove.length; i++){
+        btns_remove[i].addEventListener('click', removeIgredient);
+   }
+   function removeIgredient(event){
+        let btn_remove = event.target;
+        let btn_remove_parent = btn_remove.parentElement;
+        btn_remove_parent.remove();
+   }
+  
 }
 
 
@@ -55,17 +67,8 @@ function addNewButton(event){
     block_amount.innerHTML = 0;
     block_amount.style.display = 'none';
     }
-}
 
-
-/* Add count of ingredients */
-
-function addAmount(event){
-    let add_ingredient = event.target;
-    let add_ingredient_parent = add_ingredient.parentElement;
-    let block_amount = add_ingredient_parent.children[0];
-    block_amount.style.display = 'block';
-    block_amount.innerHTML++;
+    
 
 }
 
