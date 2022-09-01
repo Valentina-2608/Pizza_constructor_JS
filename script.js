@@ -6,6 +6,7 @@ for(let i = 0; i < btns_add_ingredients.length; i++){
     btns_add_ingredients[i].addEventListener('click', addAmount);
     btns_add_ingredients[i].addEventListener('click', addNewButton);
     btns_add_ingredients[i].addEventListener('click',addToOrder);
+    btns_add_ingredients[i].addEventListener('click', grandTotal);
     
 }
 
@@ -35,10 +36,28 @@ function addToOrder(event){
         let btn_remove = event.target;
         let btn_remove_parent = btn_remove.parentElement;
         btn_remove_parent.remove();
+        grandTotal();
    }
   
+   
 }
 
+/* Count sum of all ingredients in block order */
+
+function grandTotal(){
+    let pizza_sum= document.querySelector('.pizza_sum');
+    let pizza_sum_string = pizza_sum.innerHTML;
+    let pizza_sum_number = +pizza_sum_string.substring(0, pizza_sum_string.length - 3);
+    let price_counts = document.querySelectorAll('.price');
+    let sum = 0;
+    for (let i = 0; i < price_counts.length; i++){
+        let price_string = price_counts[i].innerHTML;
+        price_number = +price_string.substring(0, price_string.length-3);
+        sum+=price_number;
+    }
+    pizza_sum.innerHTML = sum + 'UAH';
+  
+}
 
 /* Add button remove to block ingredient */
 
@@ -82,6 +101,7 @@ function addNewButton(event){
         if (new_ingredients[i].children[0].innerHTML === name){
             new_ingredients[i].parentElement.removeChild(new_ingredients[i]);
         }
+        grandTotal();
     }
 }
 
@@ -98,3 +118,6 @@ function addAmount(event){
     block_amount.innerHTML++;
 
 }
+
+
+
