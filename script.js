@@ -52,6 +52,7 @@ function addToOrder(event){
         for(let i = 0; i < ingredients_block.length; i++){
             if (ingredients_block[i].children[2].innerHTML === name_order){
                 ingredients_block[i].children[0].style.display = 'none';
+                ingredients_block[i].children[0].innerHTML = 0;
                 ingredients_block[i].children[5].style.display = 'none';
             }
         }
