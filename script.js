@@ -27,17 +27,37 @@ function addToOrder(event){
     order.appendChild(new_ingredient);
 
 
-    /* Remove block new_ingredient from block order */
+
+
+    
    let btns_remove = document.querySelectorAll('.btn_remove');
    for(let i = 0; i < btns_remove.length; i++){
-        btns_remove[i].addEventListener('click', removeIgredient);
+        btns_remove[i].addEventListener('click', removeFromOrder);
+        btns_remove[i].addEventListener('click', removeFromIngredient);
    }
-   function removeIgredient(event){
+   /* Remove block new_ingredient from block order */
+   function removeFromOrder(event){
         let btn_remove = event.target;
         let btn_remove_parent = btn_remove.parentElement;
         btn_remove_parent.remove();
         grandTotal();
    }
+
+   /* Hide block_amount and button Remove from block ingredient */
+  function removeFromIngredient(event){
+        let btn_remove = event.target;
+        let btn_remove_parent = btn_remove.parentElement;
+        let name_order = btn_remove_parent.children[0].innerHTML;
+        let ingredients_block = document.querySelectorAll('.ingredient');
+        for(let i = 0; i < ingredients_block.length; i++){
+            if (ingredients_block[i].children[2].innerHTML === name_order){
+                ingredients_block[i].children[0].style.display = 'none';
+                ingredients_block[i].children[5].style.display = 'none';
+            }
+        }
+        grandTotal();
+   }
+
   
    
 }
