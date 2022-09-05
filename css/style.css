@@ -233,21 +233,39 @@ label img{
 /* Base */
 .base{
     position: absolute;
-    top:450px;
+    top:500px;
     right:0px;
     width:50%;
     height:400px;
     z-index:5;
+}
+
+.base img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image_ingredients{
+    position: absolute;
+    top:520px;
+    right:0px;
+    width:50%;
+    height:400px;
+    z-index:6;
+}
+
+.image_ingredients img{
+    visibility: hidden;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
    
 }
 
-
-.base img{
-    width:60%;
-    position: absolute;
-    top:10%;
-    left:22%;
-}
 
 /* Order */
 #order{
