@@ -1,13 +1,18 @@
 /* Script */
 
 
+function load(){
+    
+
+
+
 let btns_add_ingredients = document.querySelectorAll('.add_ingredient');
 for(let i = 0; i < btns_add_ingredients.length; i++){
     btns_add_ingredients[i].addEventListener('click', addAmount);
     btns_add_ingredients[i].addEventListener('click', addNewButton);
-    btns_add_ingredients[i].addEventListener('click',addToOrder);
+    btns_add_ingredients[i].addEventListener('click', addToOrder);
     btns_add_ingredients[i].addEventListener('click', grandTotal);
-    
+  
 }
 
 /* Add ingredient to order */
@@ -26,8 +31,19 @@ function addToOrder(event){
     <button class="btn_remove">Remove</button>`
     order.appendChild(new_ingredient);
 
-
-
+    
+ 
+        let pizza_images = JSON.parse(images);
+        let image_ingredients = document.querySelector('.image_ingredients');
+        for(let elem of pizza_images){
+            if (elem.name === name_order){
+                let img = document.createElement('img');
+                img.src=elem.img;
+                image_ingredients.appendChild(img);
+                img.style.visibility = 'visible';
+                
+            }
+    }
 
     
    let btns_remove = document.querySelectorAll('.btn_remove');
@@ -142,3 +158,4 @@ function addAmount(event){
 
 
 
+}
