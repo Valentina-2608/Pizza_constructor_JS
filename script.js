@@ -12,6 +12,7 @@ for(let i = 0; i < btns_add_ingredients.length; i++){
     btns_add_ingredients[i].addEventListener('click', addNewButton);
     btns_add_ingredients[i].addEventListener('click', addToOrder);
     btns_add_ingredients[i].addEventListener('click', grandTotal);
+    btns_add_ingredients[i].addEventListener('click', grandWeight);
   
 }
 
@@ -21,12 +22,14 @@ function addToOrder(event){
     let add_ingredient_parent = add_ingredient.parentElement;
     let name_order = add_ingredient_parent.children[2].innerHTML;
     let price_order = add_ingredient_parent.children[3].children[2].innerHTML;
+    let weight_order = add_ingredient_parent.children[3].children[0].innerHTML;
     let quantity_order = 1;
     let order = document.getElementById('order');
     let new_ingredient = document.createElement('div');
     new_ingredient.classList.add('new_ingredient');
     new_ingredient.innerHTML = `<span class="name">${name_order}</span>
     <span class="quantity">${quantity_order}</span>
+    <span class="weight">${weight_order}</span>
     <span class="price">${price_order}</span>
     <button class="btn_remove">Remove</button>`
     order.appendChild(new_ingredient);
@@ -57,6 +60,7 @@ function addToOrder(event){
         let btn_remove_parent = btn_remove.parentElement;
         btn_remove_parent.remove();
         grandTotal();
+        grandWeight();
    }
 
    /* Hide block_amount and button Remove from block ingredient */
@@ -73,6 +77,7 @@ function addToOrder(event){
             }
         }
         grandTotal();
+        grandWeight();
    }
 
   
@@ -83,8 +88,6 @@ function addToOrder(event){
 
 function grandTotal(){
     let pizza_sum= document.querySelector('.pizza_sum');
-    let pizza_sum_string = pizza_sum.innerHTML;
-    let pizza_sum_number = +pizza_sum_string.substring(0, pizza_sum_string.length - 3);
     let price_counts = document.querySelectorAll('.price');
     let sum = 0;
     for (let i = 0; i < price_counts.length; i++){
@@ -95,6 +98,20 @@ function grandTotal(){
     pizza_sum.innerHTML = sum + 'UAH';
   
 }
+
+function grandWeight(){
+    let pizza_weight= document.querySelector('.pizza_weight');
+    let weight_counts = document.querySelectorAll('.weight');
+    let weight = 0;
+    for (let i = 0; i < weight_counts.length; i++){
+        let weight_string = weight_counts[i].innerHTML;
+        weight_number = +weight_string.substring(0, weight_string.length-2);
+        weight+=weight_number;
+    }
+    pizza_weight.innerHTML = weight + 'gr';
+  
+}
+
 
 /* Add button remove to block ingredient */
 
