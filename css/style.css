@@ -47,6 +47,19 @@ header{
 }
 
 
+
+#clear_cart{
+    background-color: #82213E;
+    border:none;
+    padding:10px;
+    margin-left:20px;
+    color:white;
+    border-radius:5px;
+}
+
+#clear_cart{
+    cursor:pointer;
+}
 /* Caption */
 
 .caption{
