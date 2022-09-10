@@ -199,7 +199,12 @@ function load(){
     function addToCart(){
         let cart_price = document.getElementById('cart_price');
         let pizza_sum = document.querySelector('.pizza_sum');
+        let pizza_weight = document.querySelector('.pizza_weight');
         cart_price.innerHTML = pizza_sum.innerHTML;
+        let price = document.querySelector('.price');
+        let weight = document.querySelector('.weight');
+        pizza_sum.innerHTML = price.innerHTML;
+        pizza_weight.innerHTML = weight.innerHTML;
         let new_ingredients = document.querySelectorAll('.new_ingredient');
         for (let elem of new_ingredients){
              elem.parentElement.removeChild(elem);
