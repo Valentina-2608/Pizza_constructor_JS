@@ -297,6 +297,21 @@ label img{
 }
 
 
+
+#add_to_cart{
+    margin-left:2%;
+    border-radius:6px;
+    border:none;
+    padding:7px;
+    font-weight: bold;
+    color:#82213E;
+}
+
+
+#add_to_cart:hover{
+    cursor: pointer;
+}
+
 #order_sum{
     width:100%;
 }
