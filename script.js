@@ -59,6 +59,14 @@ function load(){
             let btn_remove = event.target;
             let btn_remove_parent = btn_remove.parentElement;
             btn_remove_parent.remove();
+            let name_order = btn_remove_parent.children[0].innerHTML;
+            let image_ingredients = document.querySelector('.image_ingredients');
+            let img_ingredients = document.querySelectorAll('.image_ingredients img');
+            for(let i = 0; i< img_ingredients.length; i++){
+                if(name_order === img_ingredients[i].alt){
+                    image_ingredients.removeChild(img_ingredients[i]);  
+            } 
+        }
             grandTotal();
             grandWeight();
        }
@@ -136,8 +144,8 @@ function load(){
         }
     
          /* Hide btn_delete  and block_amount from block ingredient, delete image from
-         block image_ingrdients */
-         
+         block image_ingredients */
+
         function deleteFromBlockIngredient(event){
         let btn_delete = event.target;
         btn_delete.style.display = 'none';
