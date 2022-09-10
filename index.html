@@ -17,7 +17,7 @@
 		</div>
 		<div class="basket">
 			<img src="img/shopping_cart.jpg" width="100px">
-			<span>0.00 UAH</span>
+			<span id="cart_price">0.00 UAH</span>
 		</div>
 	</header>
     <div class="caption">
@@ -389,7 +389,9 @@
 
 	</div>
 	<div id="order">
-		<div class="order_caption">Your pizza</div>
+		<div class="order_caption">Your pizza
+			<button id="add_to_cart">Add to cart</button>
+		</div>
 			<div id="sum">
 				<p>Weight: <span class="pizza_weight">500gr</span></p>
 				<p>Sum: <span class="pizza_sum">52UAH</span></p>
