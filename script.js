@@ -125,9 +125,7 @@ function load(){
     
     /* Add button remove to block ingredient */
     
-    let ingredient = document.querySelector('.ingredient');
-    
-    
+
     function addNewButton(event){
         let add_ingredient = event.target;
         let add_ingredient_parent = add_ingredient.parentElement;
@@ -159,7 +157,8 @@ function load(){
         for(let i = 0; i< img_ingredients.length; i++){
             if(name_ingredient === img_ingredients[i].alt){
                 image_ingredients.removeChild(img_ingredients[i]);  
-        }        }
+            }  
+        }
     
     }
        
@@ -195,8 +194,36 @@ function load(){
     
     }
     
+    let add_to_cart = document.getElementById('add_to_cart');
+    add_to_cart.addEventListener('click', addToCart);
+    function addToCart(){
+        let cart_price = document.getElementById('cart_price');
+        let pizza_sum = document.querySelector('.pizza_sum');
+        cart_price.innerHTML = pizza_sum.innerHTML;
+        let new_ingredients = document.querySelectorAll('.new_ingredient');
+        for (let elem of new_ingredients){
+             elem.parentElement.removeChild(elem);
+
+        }
+
+        let img_ingredients = document.querySelectorAll('.image_ingredients img');
+        for(let elem of img_ingredients){
+                elem.parentElement.removeChild(elem);
+            }  
+
+            let ingredients_block = document.querySelectorAll('.ingredient');
+            for(let i = 0; i < ingredients_block.length; i++){
+                    ingredients_block[i].children[0].style.display = 'none';
+                    ingredients_block[i].children[0].innerHTML = 0;
+                    ingredients_block[i].children[5].style.display = 'none';
+                }
+            
+        }
+    }
     
-    
-}
+
    
-    
+
+
+
+  
