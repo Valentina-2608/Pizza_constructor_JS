@@ -5,8 +5,418 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="ingredients.js"></script>
+	<script src="script.js"></script>
 </head>
-<body>
+<body onload = "load()">    
+<div class="main">
+    <header>
+		<div class="logo">
+			<img src="img/logo.jpg" width="90px">
+			Pizza constructor
+		</div>
+		<div class="basket">
+			<img src="img/shopping_cart.jpg" width="100px">
+			<span id="cart_price">0.00 UAH</span>
+			<button id="clear_cart">Clear</button>
+		</div>
+	</header>
+    <div class="caption">
+		<div class="line1"></div>
+		<div class="text">Create pizza to your taste</div>
+		<div class="line1"></div>
+	</div>
+    <div class="fon1"></div>
+	<div class="fon2"></div>
+    <div class="food_tabs">
+
+		<input type="radio" name="tab" id="tab_1" checked>
+		<label for="tab_1">
+			<img src="img/sauce_icon.png">
+			Base sauce
+		</label>
+		<input type="radio" name="tab" id="tab_2">
+		<label for="tab_2">
+			<img src="img/cheese_icon.png">
+			Cheese
+		</label>
+		<input type="radio" name="tab" id="tab_3">
+		<label for="tab_3">
+			<img src="img/meat_icon.png">
+			Meat&sausage
+		</label>
+		<input type="radio" name="tab" id="tab_4">
+		<label for="tab_4">
+			<img src="img/fish_icon.png">
+			Seafood
+		</label>
+		<input type="radio" name="tab" id="tab_5">
+		<label for="tab_5">
+			<img src="img/mushrooms_icon.png">
+			Mushrooms
+		</label>
+		<input type="radio" name="tab" id="tab_6">
+		<label for="tab_6">
+			<img src="img/vegetables_icon.png">
+			Vegetables
+		</label>
+	
+		<div id="tab_1">
+			<div class="ingredients">
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/red_sauce.jpg">
+					<p>Red sauce</p>
+					<p>
+						<span class="ing_weight">80gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">17UAH</span>
+					</p>
+						<input type="button" class="add_ingredient" value="Add">
+						<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/white_sauce.png">
+					<p>White sauce</p>
+					<p>
+						<span class="ing_weight">80gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">19UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+			</div>
+		</div>
+	    <div id="tab_2">
+			<div class="ingredients">
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/mozzarella.jpg">
+					<p>Mozzarella</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">39UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/parmezan.png">
+					<p>Parmesan cheese</p>
+					<p>
+						<span class="ing_weight">10gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">19UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/cheese.png">
+					<p>Cheese</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">42UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/feta.jpg">
+					<p>Feta cheese</p>
+					<p>
+						<span class="ing_weight">30gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">18UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/roquefort.jpg">
+					<p>Roquefort cheese</p>
+					<p>
+						<span class="ing_weight">30gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">62UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+			</div>
+		</div>
+        <div id="tab_3">
+			<div class="ingredients">
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/bacon.jpg">
+					<p>Bacon</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">48UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/ham.jpeg">
+					<p>Ham</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">46UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/chicken.png">
+					<p>Smoked chicken</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">50UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/prosciutto.jpg">
+					<p>Prosciutto</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">65UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/salami.jpg">
+					<p>Salami</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">43UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/hunting_sausages.jpg">
+					<p>Hunting sausages</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">35UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				
+			</div>
+		</div>
+        <div id="tab_4">
+			<div class="ingredients">
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/prawn.jpg">
+					<p>Prawn</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">93UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/salmon.jpg">
+					<p>Salmon</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">98UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/tuna.jpg">
+					<p>Tuna</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">65UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/seafood_mix.jpg">
+					<p>Seafood mix</p>
+					<p>
+						<span class="ing_weight">120gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">60UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+			</div>
+		</div>
+        <div id="tab_5">
+			<div class="ingredients">
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/champignons.png">
+					<p>Champignons</p>
+					<p>
+						<span class="ing_weight">70gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">19UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/white_mushrooms.jpeg">
+					<p>White mushrooms</p>
+					<p>
+						<span class="ing_weight">70gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">85UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+			</div>
+		</div>
+		<div id="tab_6">
+			<div class="ingredients">
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/tomatoes.png">
+					<p>Tomatoes</p>
+					<p>
+						<span class="ing_weight">70gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">14UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/pepper.jpg">
+					<p>Sweet pepper</p>
+					<p>
+						<span class="ing_weight">50gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">15UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/black_olives.png">
+					<p>Black olives</p>
+					<p>
+						<span class="ing_weight">30gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">18UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/green_olives.jpg">
+					<p>Green olives</p>
+					<p>
+						<span class="ing_weight">38gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">18UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/green_onion.png">
+					<p>Green onion</p>
+					<p>
+						<span class="ing_weight">30gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">15UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+				<div class="ingredient">
+					<div class="block_amount">0</div>
+					<img src="img/salad_mix.jpg">
+					<p>Salad mix</p>
+					<p>
+						<span class="ing_weight">60gr</span>
+						<span class="symbol">/</span>
+						<span class="ing_price">36UAH</span>
+					</p>
+					<input type="button" class="add_ingredient" value="Add">
+					<input type="button" class="btn_delete" value="Remove">
+				</div>
+			</div>
+			
+		</div>		
+
+	</div>
+	<div id="order">
+		<div class="order_caption">Your pizza
+			<button id="add_to_cart">Add to cart</button>
+		</div>
+			<div id="sum">
+				<p>Weight: <span class="pizza_weight">500gr</span></p>
+				<p>Sum: <span class="pizza_sum">52UAH</span></p>
+			</div>
+			<div class="line"></div>
+			<div class="order_base">
+				<span class="name">Base:</span>
+				<span class="quantity">1</span>
+				<span class="weight">500gr</span>
+				<span class="price">52UAH</span>
+				<button class="btn_remove" disabled>Remove</button>
+			</div>
+		
+	</div>
+	<div class="base">
+		<img src="img/osnova.png">
+	</div>
+		<div class="image_ingredients">
+		</div>
+<footer>
+	<span>Pizza_constructor.</span> 
+	<span>All pictures were found in Google and various sites.</span>
+</footer>
+</div>
 
 </body>
 </html>
