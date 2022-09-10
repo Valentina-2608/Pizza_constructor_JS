@@ -219,6 +219,14 @@ function load(){
                 }
             
         }
+
+
+        let clear_cart = document.getElementById('clear_cart');
+        clear_cart.addEventListener('click',clearCart);
+        function clearCart(){
+            let cart_price = document.getElementById('cart_price');
+            cart_price.innerHTML = '0.00 UAH';
+        }
     }
     
 
